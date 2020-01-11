@@ -1,0 +1,23 @@
+/**
+ * Greeting related services and messages
+ */
+syntax = "proto3";
+
+package proto;
+
+// The cowsay service definition.
+service CowSayer {
+  // Sends a cow saying stuff
+  rpc Cowsay (CowsayRequest) returns (CowsayReply) {}
+}
+
+// The request message containing the user's name
+message CowsayRequest {
+  string name = 1;
+  string cow = 2;
+}
+
+// The response message containing the formatted cow
+message CowsayReply {
+  string message = 1;
+}
