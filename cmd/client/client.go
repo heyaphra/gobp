@@ -21,7 +21,7 @@ func main() {
 	}
 	conn, err := grpc.Dial(address, grpc.WithInsecure(), grpc.WithBlock())
 	if err != nil {
-		log.Fatalf("did not connect: %v", err)
+		log.Fatalf("could not connect: %v", err)
 	}
 	defer conn.Close()
 	c := proto.NewCowSayerClient(conn)
